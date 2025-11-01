@@ -1,0 +1,462 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Proton e.MAS 7 Owners' Convoy – Web Handbook</title>
+  <meta name="description" content="Mobile-first web handbook for Proton e.MAS 7 Owners' Convoy to Sumiran Eco Park & Resort, Kuching." />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --orange: #ff6a00;
+      --amber: #ffa24d;
+      --blue: #00a0e3;
+      --light-bg: #f8f5f2;
+      --text: #1a1a1a;
+      --muted: #666;
+    }
+    
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+    
+    html, body {
+      font-family: 'Poppins', sans-serif;
+      background: white;
+      color: var(--text);
+      line-height: 1.6;
+    }
+    
+    @media screen {
+      body {
+        background: var(--light-bg);
+      }
+    }
+    
+    .page-container {
+      max-width: 210mm;
+      margin: 0 auto;
+      background: white;
+      box-shadow: 0 0 20px rgba(0,0,0,0.1);
+    }
+    
+    @media print {
+      .page-container {
+        max-width: 100%;
+        box-shadow: none;
+      }
+      
+      .no-print {
+        display: none !important;
+      }
+    }
+    
+    header.hero {
+      position: relative;
+      background: linear-gradient(135deg, var(--orange) 0%, var(--amber) 50%, var(--blue) 100%);
+      color: white;
+      padding: 40px 30px 60px;
+      text-align: center;
+    }
+    
+    .logo-container {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      margin-bottom: 20px;
+      max-width: 100%;
+    }
+    
+    .logo-left {
+      width: 120px;
+      height: auto;
+      filter: brightness(0) invert(1);
+    }
+    
+    .logo-right {
+      width: 180px;
+      height: auto;
+      filter: brightness(0) invert(1);
+    }
+    
+    header.hero h1 {
+      font-size: 36px;
+      font-weight: 800;
+      margin: 20px 0 10px;
+    }
+    
+    header.hero p {
+      font-size: 18px;
+      margin-bottom: 20px;
+      opacity: 0.95;
+    }
+    
+    .cta {
+      margin-top: 20px;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 12px;
+    }
+    
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      font-weight: 600;
+      padding: 14px 24px;
+      border-radius: 12px;
+      cursor: pointer;
+      text-decoration: none;
+      font-size: 15px;
+      transition: all 0.3s ease;
+      border: none;
+    }
+    
+    .btn.primary {
+      background: white;
+      color: var(--orange);
+      box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+    }
+    
+    .btn.secondary {
+      background: rgba(255,255,255,0.15);
+      color: white;
+      border: 2px solid white;
+    }
+    
+    main {
+      padding: 30px;
+    }
+    
+    section {
+      margin-bottom: 30px;
+      page-break-inside: avoid;
+    }
+    
+    h2 {
+      color: var(--orange);
+      font-size: 22px;
+      font-weight: 700;
+      margin-bottom: 15px;
+      padding-bottom: 8px;
+      border-bottom: 3px solid var(--blue);
+    }
+    
+    .info-grid {
+      display: grid;
+      gap: 10px;
+      margin: 15px 0;
+    }
+    
+    .info-item {
+      display: flex;
+      gap: 10px;
+      line-height: 1.8;
+    }
+    
+    .info-item strong {
+      color: var(--orange);
+      min-width: 140px;
+    }
+    
+    .note-box {
+      background: #fff3e0;
+      border-left: 4px solid var(--orange);
+      padding: 15px 20px;
+      border-radius: 8px;
+      margin: 15px 0;
+    }
+    
+    ul {
+      list-style: none;
+      padding: 0;
+      margin: 15px 0;
+    }
+    
+    ul li {
+      padding: 8px 0 8px 25px;
+      position: relative;
+      line-height: 1.6;
+    }
+    
+    ul li::before {
+      content: '▸';
+      color: var(--blue);
+      font-weight: bold;
+      position: absolute;
+      left: 0;
+      font-size: 16px;
+    }
+    
+    .map-placeholder {
+      width: 100%;
+      height: 300px;
+      background: #f5f5f5;
+      border: 2px dashed #ccc;
+      border-radius: 12px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #999;
+      margin: 20px 0;
+      font-style: italic;
+      text-align: center;
+      padding: 20px;
+    }
+    
+    .games-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 20px;
+      margin: 20px 0;
+    }
+    
+    .game-card {
+      background: var(--light-bg);
+      padding: 20px;
+      border-radius: 12px;
+      text-align: center;
+    }
+    
+    .game-card img {
+      width: 100%;
+      max-width: 250px;
+      height: auto;
+      border-radius: 8px;
+      margin-bottom: 15px;
+    }
+    
+    .game-card h3 {
+      color: var(--orange);
+      font-size: 16px;
+      margin-bottom: 10px;
+    }
+    
+    .game-card p {
+      font-size: 14px;
+      color: var(--muted);
+    }
+    
+    .contact-list {
+      display: grid;
+      gap: 15px;
+      margin: 15px 0;
+    }
+    
+    .contact-item {
+      background: var(--light-bg);
+      padding: 15px 20px;
+      border-radius: 10px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    
+    .contact-item a {
+      color: var(--blue);
+      text-decoration: none;
+      font-weight: 600;
+    }
+    
+    footer {
+      text-align: center;
+      font-size: 12px;
+      color: var(--muted);
+      padding: 30px;
+      border-top: 2px solid #e5e7eb;
+    }
+    
+    @media print {
+      @page {
+        size: A4;
+        margin: 0;
+      }
+      
+      body {
+        margin: 0;
+        padding: 0;
+      }
+      
+      .page-container {
+        width: 100%;
+        margin: 0;
+      }
+      
+      header.hero {
+        padding: 30px 20px 40px;
+      }
+      
+      main {
+        padding: 20px;
+      }
+      
+      section {
+        margin-bottom: 20px;
+      }
+      
+      .games-grid {
+        grid-template-columns: 1fr 1fr;
+      }
+      
+      .game-card img {
+        max-width: 200px;
+      }
+    }
+    
+    @media screen and (max-width: 768px) {
+      .logo-left {
+        width: 80px;
+      }
+      
+      .logo-right {
+        width: 120px;
+      }
+      
+      header.hero h1 {
+        font-size: 24px;
+      }
+      
+      header.hero p {
+        font-size: 14px;
+      }
+      
+      .games-grid {
+        grid-template-columns: 1fr;
+      }
+      
+      .contact-item {
+        flex-direction: column;
+        gap: 8px;
+        text-align: center;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="page-container">
+    <header class="hero">
+      <div class="logo-container">
+        <img src="https://i.postimg.cc/zXcqYPHD/gheehua-logo.png" alt="Ghee Hua Logo" class="logo-left">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/3d/Proton_Logo_Vector.svg/2560px-Proton_Logo_Vector.svg.png" alt="Proton Logo" class="logo-right">
+      </div>
+      
+      <h1>Proton e.MAS 7 Owners' Convoy</h1>
+      <p>Let's convoy with care, confidence, and community spirit.</p>
+      
+      <div class="cta no-print">
+        <a class="btn primary" href="javascript:window.print()">🖨️ Print / Save PDF</a>
+        <a class="btn secondary" href="https://maps.app.goo.gl/LvNMYpTBx7yMGQZQ7" target="_blank">🗺️ Google Maps</a>
+        <a class="btn secondary" href="https://sumiranecocamp.biz.my/" target="_blank">🌿 Venue Website</a>
+      </div>
+    </header>
+
+    <main>
+      <section>
+        <h2>📅 Event Overview</h2>
+        <div class="info-grid">
+          <div class="info-item">
+            <strong>Date:</strong>
+            <span>Saturday, 8 November 2025 @ 9:00 AM</span>
+          </div>
+          <div class="info-item">
+            <strong>Gather Point:</strong>
+            <span>Proton e.MAS 3S Ghee Hua Kuching, Jalan Padungan</span>
+          </div>
+          <div class="info-item">
+            <strong>Destination:</strong>
+            <span>Sumiran Eco Park & Resort, Batu Kawa Matang</span>
+          </div>
+        </div>
+        <div class="note-box">
+          <strong>☕🥐 Note:</strong> Light breakfast will be prepared before flag-off.
+        </div>
+      </section>
+
+      <section>
+        <h2>🗺️ Getting There – Map & Navigation</h2>
+        <p><strong>Route Summary:</strong> Showroom (Jalan Padungan) → Jalan Rock/Route 1002 → Pan Borneo Highway (Route 1/AH150) → Jalan Rantau Panjang → <em>Sumiran Eco Park & Resort</em>.</p>
+        <p>Estimated drive: <strong>~45–50 minutes</strong> in normal traffic.</p>
+        <div class="map-placeholder">
+          📍 Use Google Maps link above for live navigation<br>
+          https://maps.app.goo.gl/LvNMYpTBx7yMGQZQ7
+        </div>
+      </section>
+
+      <section>
+        <h2>⏰ Event Programme</h2>
+        <ul>
+          <li><strong>9:00 AM</strong> – Arrival & registration at showroom; light breakfast; sticker/flag distribution</li>
+          <li><strong>9:30 AM</strong> – Safety & route briefing</li>
+          <li><strong>9:50 AM</strong> – Flag-off & group photo</li>
+          <li><strong>10:00 AM</strong> – Convoy departs via Matang route (~45 min)</li>
+          <li><strong>10:30 AM</strong> – Arrival & welcome @ <em>Khemah Danau</em></li>
+          <li><strong>10:40 AM</strong> – Field games / telematch</li>
+          <li><strong>12:00 PM</strong> – Lunch @ <em>Khemah Danau</em></li>
+          <li><strong>1:30 PM</strong> – Community moment, lucky draw & group photo</li>
+          <li><strong>3:30 PM</strong> – Convoy returns to Kuching</li>
+        </ul>
+      </section>
+
+      <section>
+        <h2>🛡️ Safety & Convoy Discipline</h2>
+        <ul>
+          <li>Maintain a two-second gap (increase in wet conditions)</li>
+          <li>Hazards only for real hazards; keep left where possible; no undertaking</li>
+          <li>Follow lead; keep sweeper in sight; report incidents via walkie-talkie</li>
+          <li>Stay alert and drive defensively at all times</li>
+          <li>Emergency contact numbers are provided below</li>
+        </ul>
+      </section>
+
+      <section>
+        <h2>🎮 Games & Activities</h2>
+        
+        <div class="games-grid">
+          <div class="game-card">
+            <img src="sandbox:/mnt/data/isi_air_dalam_botol.png" alt="Isi Air Dalam Botol">
+            <h3>Isi Air Dalam Botol</h3>
+            <p>Teams fill bottles using sponges; fastest team wins!</p>
+          </div>
+          
+          <div class="game-card">
+            <img src="sandbox:/mnt/data/bowling_kelapa.png" alt="Bowling Kelapa">
+            <h3>Bowling Kelapa</h3>
+            <p>Coconut "bowling ball" knocks down bottle pins; most knockdowns wins!</p>
+          </div>
+        </div>
+        
+        <div class="note-box">
+          🎁 <strong>Prizes await winners!</strong> Come ready to have fun and compete!
+        </div>
+      </section>
+
+      <section>
+        <h2>📞 Key Contacts</h2>
+        <div class="contact-list">
+          <div class="contact-item">
+            <span><strong>Proton e.MAS 3S Ghee Hua</strong></span>
+            <a href="tel:+60168089127">+6016-808 9127</a>
+          </div>
+          <div class="contact-item">
+            <span><strong>Brenda</strong>, Sales Manager</span>
+            <a href="tel:+60102772722">+6010-277 2722</a>
+          </div>
+          <div class="contact-item">
+            <span><strong>Nicholas</strong>, Convoy Marshal</span>
+            <a href="tel:+60186681671">+6018-668 1671</a>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer>
+      <strong>Proton e.MAS 3S Ghee Hua Kuching</strong><br>
+      © 2025 • Owners' Convoy Handbook (Web Edition)<br>
+      <small>Drive safe, have fun, and enjoy the journey! 🚗💨</small>
+    </footer>
+  </div>
+</body>
+</html>
